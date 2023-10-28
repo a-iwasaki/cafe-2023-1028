@@ -37,10 +37,10 @@ def make_mime(mail_to, subject, body):
     """
     # MIMEによるEメールの構造
     # https://azisava.sakura.ne.jp/programming/0021.html
-    msg = MIMEText(body, 'plain') #メッセージ本文 デフォルトでUTF-8になる
+    msg = MIMEText(body, 'plain')   #メッセージ本文 デフォルトでUTF-8になる
     msg['Subject'] = subject #件名
     msg['To'] = mail_to #宛先
-    msg['From'] = GMAIL_ACOUNNT #送信元
+    msg['From'] = GMAIL_ACOUNNT     #送信元 Fromを指定しても、Gmailの場合は認証ユーザーになる
     return msg
 
 def send_my_message():
